@@ -81,3 +81,13 @@ Collect a lots of Spark information, solution, debugging etc. Feel Free to open 
     - Use ```--packages``` to include comma-sparated list of Maven coordinates of JARs.   
       EX: ```--packages com.google.code.gson:gson:2.6.2```   
       This example will add jar of gson to both executor and driver classpath
+
+### Serialization stack error
+  - Error message likes:   
+  Exception in thread "main" org.apache.spark.SparkException: Job aborted due to stage failure: Task 0.0 in stage 0.0 (TID 0) had a not serializable result: com.spark.demo.MyClass
+Serialization stack:   
+    -object not serializable (class: com.spark.demo.MyClass, value: com.spark.demo.MyClass@6951e281)   
+    -element of array (index: 0)   
+    -array (class [Ljava.lang.Object;, size 6)
+  - How to fix?
+    - Make ```com.spark.demo.MyClass``` to implement ```java.io.Serializable```
