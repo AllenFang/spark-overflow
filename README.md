@@ -91,3 +91,18 @@ Serialization stack:
     -array (class [Ljava.lang.Object;, size 6)
   - How to fix?
     - Make ```com.spark.demo.MyClass``` to implement ```java.io.Serializable```
+
+### java.io.FileNotFoundException: spark-assembly.jar does not exist
+  - How to fix?
+   1. Upload Spark-assembly.jar to hadoop
+   2. Set ```spark.yarn.jar```, there are two way to configure
+      - Add ```--conf spark.yarn.jar``` when launch spark-submit
+      - Set ```spark.yarn.jar``` on ```SparkConf``` in your spark driver.
+
+### java.io.IOException: Resource spark-assembly.jar changed on src filesystem ([ref](http://stackoverflow.com/questions/30893995/spark-on-yarn-jar-upload-problems))
+  - Spark-assembly.jar exist in HDFS, but still got assembly jar changed error.
+  - How to fix?
+   1. Upload Spark-assembly.jar to hadoop
+   2. Set ```spark.yarn.jar```, there are two way to configure
+      - Add ```--conf spark.yarn.jar``` when launch spark-submit
+      - Set ```spark.yarn.jar``` on ```SparkConf``` in your spark driver.
