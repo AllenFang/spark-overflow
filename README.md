@@ -95,10 +95,14 @@ Serialization stack:
 ### java.io.FileNotFoundException: spark-assembly.jar does not exist
   - How to fix?
    1. Upload Spark-assembly.jar to hadoop
-   2. Using ```--conf spark.yarn.jar``` when spark-submit or ```conf.set("spark.yarn.jar","hdfs://hostname:port/spark-assembly-upload-at-1st.jar")``` in application
+   2. Set ```spark.yarn.jar```, there are two way to configure
+      - Add ```--conf spark.yarn.jar``` when launch spark-submit
+      - Set ```spark.yarn.jar``` on ```SparkConf``` in your spark driver.
 
 ### java.io.IOException: Resource spark-assembly.jar changed on src filesystem ([ref](http://stackoverflow.com/questions/30893995/spark-on-yarn-jar-upload-problems))
-  - Spark-assembly.jar does exist.
+  - Spark-assembly.jar exist in HDFS, but still got assembly jar changed error.
   - How to fix?
    1. Upload Spark-assembly.jar to hadoop
-   2. Using ```--conf spark.yarn.jar``` when spark-submit or ```conf.set("spark.yarn.jar","hdfs://hostname:port/spark-assembly-upload-at-1st.jar")``` in application
+   2. Set ```spark.yarn.jar```, there are two way to configure
+      - Add ```--conf spark.yarn.jar``` when launch spark-submit
+      - Set ```spark.yarn.jar``` on ```SparkConf``` in your spark driver.
