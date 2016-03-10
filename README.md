@@ -92,7 +92,13 @@ Serialization stack:
   - How to fix?
     - Make ```com.spark.demo.MyClass``` to implement ```java.io.Serializable```
 
-### Spark-assembly.jar changed on src filesystem error([ref](http://stackoverflow.com/questions/30893995/spark-on-yarn-jar-upload-problems))
+### java.io.FileNotFoundException: spark-assembly.jar does not exist
+  - How to fix?
+   1. Upload Spark-assembly.jar to hadoop
+   2. Using ```--conf spark.yarn.jar``` when spark-submit or ```conf.set("spark.yarn.jar","hdfs://hostname:port/spark-assembly-upload-at-1st.jar")``` in application
+
+### java.io.IOException: Resource spark-assembly.jar changed on src filesystem ([ref](http://stackoverflow.com/questions/30893995/spark-on-yarn-jar-upload-problems))
+  - Spark-assembly.jar does exist.
   - How to fix?
    1. Upload Spark-assembly.jar to hadoop
    2. Using ```--conf spark.yarn.jar``` when spark-submit or ```conf.set("spark.yarn.jar","hdfs://hostname:port/spark-assembly-upload-at-1st.jar")``` in application
