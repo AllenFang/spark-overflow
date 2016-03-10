@@ -91,3 +91,8 @@ Serialization stack:
     -array (class [Ljava.lang.Object;, size 6)
   - How to fix?
     - Make ```com.spark.demo.MyClass``` to implement ```java.io.Serializable```
+
+### Spark-assembly.jar changed on src filesystem error([ref](http://stackoverflow.com/questions/30893995/spark-on-yarn-jar-upload-problems))
+  - How to fix?
+   1. Upload Spark-assembly.jar to hadoop
+   2. Using ```--conf spark.yarn.jar``` when spark-submit or ```conf.set("spark.yarn.jar","hdfs://hostname:port/spark-assembly-upload-at-1st.jar")``` in application
