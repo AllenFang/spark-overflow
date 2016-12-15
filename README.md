@@ -19,7 +19,8 @@ Collect a lots of Spark information, solution, debugging etc. Feel Free to open 
   - YARN container size - ```yarn.nodemanager.resource.memory-mb```
   - Memory Overhead - ```spark.yarn.executor.memoryOverhead```
   <img src='http://image.slidesharecdn.com/bdt309-151009173030-lva1-app6891/95/bdt309-data-science-best-practices-for-apache-spark-on-amazon-emr-49-638.jpg'/>
-
+   - Example on how to set up Yarn and launch spark jobs to use a specific number of executors[ref](http://stackoverflow.com/questions/29940711/apache-spark-setting-executor-instances-does-not-change-the-executors)  
+  
 # **Tunning**
 ### Tune the shuffle partitions
   - Tune the number of spark.sql.shuffle.partitions
@@ -106,3 +107,7 @@ Serialization stack:
    2. Set ```spark.yarn.jar```, there are two way to configure
       - Add ```--conf spark.yarn.jar``` when launch spark-submit
       - Set ```spark.yarn.jar``` on ```SparkConf``` in your spark driver.
+      
+ ### How to find size of dataframe in Spark
+  - In Java, you can use [org.apache.spark.util.SizeEstimator](http://stackoverflow.com/a/35008549)
+  - In Pyspark, one way to do it is to persist the dataframe to disk, then go to the SparkUI Storage tab and see the size
