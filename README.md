@@ -1,7 +1,7 @@
 **spark-overflow**
 ===================
 
-Collect a lots of Spark information, solution, debugging etc. Feel Free to open a PR to contribute what you see or your experience on Apache Spark.
+A collection of Spark information, solutions, debugging tips and tricks, etc. PR are always welcome! Share what you know about Apache Spark.
 
 
 # **Knowledge**
@@ -10,9 +10,9 @@ Collect a lots of Spark information, solution, debugging etc. Feel Free to open 
 
 ### spark-submit --verbose([ref](http://www.slideshare.net/jcmia1/a-beginners-guide-on-troubleshooting-spark-applications?qid=25ed4f3f-fc2e-43b2-bc8a-7f78b21bdebb&v=&b=&from_search=34))
   - Always add ```--verbose``` options on ```spark-submit``` to print following information
-    - All default properties
-    - Command line options
-    - Settings from spark conf file
+    - All default properties.
+    - Command line options.
+    - Settings from spark conf file.
 
 ### Spark Executor on YARN([ref](http://www.slideshare.net/AmazonWebServices/bdt309-data-science-best-practices-for-apache-spark-on-amazon-emr))
   - Following is the memory relation config on YARN
