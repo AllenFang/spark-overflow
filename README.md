@@ -23,7 +23,7 @@ A collection of Spark related information, solutions, debugging tips and tricks,
 
   - An example on how to set up Yarn and launch spark jobs to use a specific numbers of executors ([Reference Link](http://stackoverflow.com/questions/29940711/apache-spark-setting-executor-instances-does-not-change-the-executors))  
 
-# **Tunnings**
+# **Tunings**
 ### Tune the shuffle partitions
   - Tune the numbers of `spark.sql.shuffle.partitions`.
 
